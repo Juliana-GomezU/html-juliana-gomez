@@ -1,4 +1,4 @@
-document.addEventListener("DOMcontentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const cardAdj = [
     {
       name: "Princess E-Girl Fashion (1)",
@@ -34,19 +34,17 @@ document.addEventListener("DOMcontentLoaded", () => {
     for (let i = 0; i < cardAdj.length; i++) {
       var carta = document.createElement("img");
       carta.setAttribute("src", "images/reverso.png");
-
       carta.setAttribute("data-id", i);
       carta.addEventListener("click", voltearCarta);
-
       cuadricula.appendChild(carta);
     }
   }
   //----------------- lecture_04 ----------------------------------//
   function voltearCarta() {
-    var cardId = this.getATTribute("data-id");
+    var cardId = this.getAttribute("data-id");
     cartasEscogidas.push(cardAdj(cardId).name);
     cartasEscogidasId.push(cardId);
-    this.setATTribute("src", "cardAdj{cardId]".img);
+    this.setAttribute("src", "cardAdj{cardId]".img);
     if (cartasEscogidas.length === 2) {
       setTimeout(verificarPareja, 1500);
     }
